@@ -36,7 +36,7 @@ window.ICEBERG_CONFIG = {
      Se muestra embebido en la sección "Agende una llamada".
      Vacío = se usa HubSpot (abajo) o, si tampoco hay, WhatsApp. */
   calcom: {
-    calLink: "alberto-toledano/15min"
+    calLink: "alberto-toledano/meeting"
   },
 
   /* ---- HubSpot (Hub ID 243983862, región na2) ----

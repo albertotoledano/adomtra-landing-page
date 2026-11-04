@@ -330,6 +330,19 @@
      el iframe ya no hacen falta: ahi solo se ve el titulo y el boton. */
   /* Calendario de Cal.com: el embed ajusta su alto solo */
   .cal-inline{width:100%;min-width:0;min-height:560px;background:#fff;border-radius:12px;overflow:hidden}
+  /* Con Cal.com el calendario ocupa todo el ancho (y va primero) para que los
+     horarios se muestren a la derecha del mes; la tarjeta de contacto va debajo. */
+  .meet-grid.has-cal{grid-template-columns:1fr;gap:24px}
+  .meet-grid.has-cal #calendario{order:-1}
+  .meet-grid.has-cal .card{display:flex;flex-wrap:wrap;align-items:center;gap:8px 32px}
+  .meet-grid.has-cal .card > div:first-child{flex:1 1 320px}
+  .meet-grid.has-cal .card .muted{margin-bottom:0}
+  .meet-grid.has-cal .card .form-actions{flex:0 1 auto;margin-top:0;justify-content:flex-end}
+  .meet-grid.has-cal .card .form-actions .btn{flex:0 0 auto;min-width:0}
+  @media (max-width:900px){
+    .meet-grid.has-cal .card .form-actions{flex:1 1 100%;justify-content:stretch}
+    .meet-grid.has-cal .card .form-actions .btn{flex:1 1 170px}
+  }
   .cal-fallback{padding:26px 22px}
   .cal-fallback .btn{width:100%;justify-content:center}
 
@@ -1177,8 +1190,10 @@
     </div>
     <div class="meet-grid">
       <div class="card">
-        <h3>Escríbanos directamente</h3>
-        <p class="muted">Mándenos su lista de equipos, el modelo que necesita reemplazar o los datos de su proyecto.</p>
+        <div>
+          <h3>Escríbanos directamente</h3>
+          <p class="muted">Mándenos su lista de equipos, el modelo que necesita reemplazar o los datos de su proyecto.</p>
+        </div>
         <div class="form-actions">
           <a class="btn btn-wa" id="fbWa" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24"><use href="#i-wa"/></svg>
@@ -1433,7 +1448,7 @@
 </a>
 
 <!-- Sube el ?v= de config.js cada vez que lo edites para que el navegador no use una copia vieja. -->
-<script src="/config.js?v=20261104e"></script>
+<script src="/config.js?v=20261104f"></script>
 <script>
 /* ==========================================================================
    Toda la configuración editable vive en config.js (window.ICEBERG_CONFIG).
@@ -1491,8 +1506,9 @@ if(CAL_OK){
   const box=document.getElementById("calInline");
   const cal=document.getElementById("calBtn");
   const sub=document.getElementById("calSub");
-  if(sub) sub.textContent="Elija el día y la hora: una llamada de 15 minutos con Alberto, en español.";
+  if(sub) sub.textContent="Elija el día, la hora y la duración: una llamada con Alberto, en español.";
   if(cal){ cal.href=CAL_URL; cal.className="btn btn-ghost"; cal.textContent="Abrir el calendario en otra pestaña"; }
+  const grid=document.querySelector("#reunion .meet-grid"); if(grid) grid.classList.add("has-cal");
   if(box){
     box.style.display="";
     (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
