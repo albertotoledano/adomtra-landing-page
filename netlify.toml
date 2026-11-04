@@ -1,0 +1,43 @@
+# ============================================================================
+# Netlify — Iceberg · Landing ADOMTRA (República Dominicana)
+# Sitio estático puro (HTML/CSS/JS). No hay framework ni paso de build.
+# Es un sitio SEPARADO de la landing de eventos (events.iceberg-refrigeration.com).
+# ============================================================================
+
+[build]
+  publish = "."
+  command = ""
+
+# /adomtra también sirve la landing (reescritura, la barra sigue mostrando /adomtra).
+[[redirects]]
+  from = "/adomtra"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/adomtra/"
+  to = "/adomtra"
+  status = 301
+
+# --- Cabeceras de caché ---------------------------------------------------
+[[headers]]
+  for = "/index.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/config.js"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+
+# --- Cabeceras de seguridad básicas --------------------------------------
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"

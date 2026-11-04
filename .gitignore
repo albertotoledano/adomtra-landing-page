@@ -1,0 +1,16 @@
+# OS / editor junk
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+.vscode/
+.idea/
+
+# Logs / temp
+*.log
+node_modules/
+
+# Local env / secrets (do NOT commit real API tokens)
+.env
+.env.*
+wrangler.toml.local
