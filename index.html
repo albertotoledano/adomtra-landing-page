@@ -757,6 +757,15 @@
   .kr-body h3{font-family:var(--font-display);font-size:26px;line-height:1.2;color:var(--navy);margin-bottom:12px}
   .kr-body p{color:var(--muted);font-size:16px;margin-bottom:22px}
   .kr-actions{display:flex;flex-wrap:wrap;gap:10px}
+  .ship-title{font-family:var(--font-display);font-size:24px;color:var(--navy);margin-top:6px}
+  .ship-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;max-width:920px;margin:22px auto 0}
+  .ship-card{background:#fff;border:2px solid var(--blue);border-radius:var(--radius);padding:26px 26px 24px;box-shadow:var(--shadow);position:relative}
+  .ship-card .ic{width:46px;height:46px;border-radius:12px;background:var(--ice);color:var(--blue);display:grid;place-items:center;margin-bottom:12px}
+  .ship-card .ic .ico{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:2}
+  .ship-tag{position:absolute;top:22px;right:22px;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue)}
+  .ship-card h3{font-family:var(--font-display);font-size:19px;color:var(--navy);margin-bottom:8px;line-height:1.25}
+  .ship-card p{color:var(--muted);font-size:15px}
+  @media (max-width:760px){ .ship-grid{grid-template-columns:1fr} }
   .brands-sub{margin:0 0 20px}
   .brands-sub .htpg-logo{margin:0 auto 10px}
   .logo-strip{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:14px;margin-bottom:18px}
@@ -813,7 +822,7 @@
       <span class="eyebrow">Refrigeración comercial e industrial · Envío a RD</span>
       <h1>Los equipos para sus proyectos, <span class="hl">directo desde Miami a República Dominicana</span></h1>
       <p class="lede">Iceberg Refrigeration Supplies: su suplidor de refrigeración en Estados Unidos, con atención en español.</p>
-      <p class="sub">Unidades condensadoras, evaporadores, compresores, cuartos fríos, controles, refrigerantes y repuestos, a precios muy competitivos para contratistas y con la logística de envío coordinada hasta República Dominicana.</p>
+      <p class="sub">Unidades condensadoras, evaporadores, compresores, cuartos fríos, controles, refrigerantes y repuestos, a precios muy competitivos para contratistas y entregados a su freight forwarder en Miami o puestos CIF en Caucedo o Río Haina.</p>
       <p class="sub sub2">Envíenos su lista o los datos de su proyecto por WhatsApp y le respondemos con precio y disponibilidad. ¿Es miembro de ADOMTRA? Mencione el código <b>ADOMTRA2027</b> al cotizar y reciba un descuento exclusivo.</p>
       <div class="hero-cta">
         <a class="btn btn-wa" id="heroWa" data-wa="quote" target="_blank" rel="noopener">
@@ -848,7 +857,7 @@
       </div>
       <ul class="hc-list">
         <li><span class="ck"><svg fill="none" stroke="currentColor" stroke-width="3"><use href="#i-check"/></svg></span><span><b>Precios muy competitivos</b> para contratistas en equipos y repuestos</span></li>
-        <li><span class="ck"><svg fill="none" stroke="currentColor" stroke-width="3"><use href="#i-check"/></svg></span><span><b>Envío coordinado</b> a Santo Domingo y todo el país</span></li>
+        <li><span class="ck"><svg fill="none" stroke="currentColor" stroke-width="3"><use href="#i-check"/></svg></span><span><b>Envío a su freight forwarder</b> en Miami o <b>CIF</b> puerto Caucedo o Río Haina</span></li>
         <li><span class="ck"><svg fill="none" stroke="currentColor" stroke-width="3"><use href="#i-check"/></svg></span><span><b>Selección y dimensionamiento</b> de equipos para cada proyecto</span></li>
         <li><span class="ck"><svg fill="none" stroke="currentColor" stroke-width="3"><use href="#i-check"/></svg></span><span><b>Atención en español</b> por WhatsApp, teléfono y correo</span></li>
       </ul>
@@ -1022,7 +1031,7 @@
       <div class="feature">
         <div class="ic"><svg class="ico" aria-hidden="true"><use href="#i-truck"/></svg></div>
         <h3>Envío a República Dominicana</h3>
-        <p>Coordinamos el envío internacional de sus equipos y repuestos, para que lleguen completos a su proyecto.</p>
+        <p>Entregamos sus equipos a su freight forwarder en Miami o se los ponemos CIF en el puerto de Caucedo o Río Haina, como le convenga.</p>
       </div>
       <div class="feature">
         <div class="ic"><svg class="ico" aria-hidden="true"><use href="#i-shield"/></svg></div>
@@ -1059,13 +1068,31 @@
       </div>
       <div class="feature">
         <span class="step-n">3</span>
-        <h3>Coordinamos el envío a RD</h3>
-        <p>Preparamos y despachamos su pedido desde Miami y le acompañamos con la logística hasta República Dominicana.</p>
+        <h3>Enviamos su pedido</h3>
+        <p>Lo entregamos a su freight forwarder en Miami o se lo ponemos CIF en el puerto de Caucedo o Río Haina.</p>
       </div>
       <div class="feature">
         <span class="step-n">4</span>
         <h3>Soporte después de la venta</h3>
         <p>Le ayudamos con la garantía del fabricante, los repuestos y el soporte técnico de fábrica.</p>
+      </div>
+    </div>
+    <div class="center" style="margin-top:46px">
+      <span class="eyebrow">Opciones de envío</span>
+      <h3 class="ship-title">Usted elige cómo recibir sus equipos</h3>
+    </div>
+    <div class="ship-grid">
+      <div class="ship-card">
+        <div class="ic"><svg class="ico" aria-hidden="true"><use href="#i-truck"/></svg></div>
+        <span class="ship-tag">Opción 1</span>
+        <h3>Entrega a su freight forwarder en Miami</h3>
+        <p>¿Ya trabaja con un freight forwarder? Le entregamos los equipos en su almacén en Miami y él se encarga del envío a República Dominicana.</p>
+      </div>
+      <div class="ship-card">
+        <div class="ic"><svg class="ico" aria-hidden="true"><use href="#i-package"/></svg></div>
+        <span class="ship-tag">Opción 2</span>
+        <h3>CIF puerto Caucedo o Río Haina</h3>
+        <p>Le cotizamos el equipo puesto en el puerto de Caucedo o de Río Haina, con flete y seguro incluidos. Usted solo se ocupa de retirarlo.</p>
       </div>
     </div>
     <div class="center" style="margin-top:46px">
@@ -1206,7 +1233,7 @@
       <div class="ben">
         <div class="num"><svg class="ico" aria-hidden="true"><use href="#i-truck"/></svg></div>
         <h3>Logística de exportación</h3>
-        <p>Coordinamos el envío internacional de equipos y repuestos hasta RD.</p>
+        <p>A su freight forwarder en Miami o CIF en Caucedo o Río Haina.</p>
       </div>
       <div class="ben">
         <div class="num"><svg class="ico" aria-hidden="true"><use href="#i-chat"/></svg></div>
@@ -1272,7 +1299,7 @@
         </div>
         <div class="log-item">
           <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M6 21V5a2 2 0 012-2h8a2 2 0 012 2v16M9 7h1M9 11h1M9 15h1M14 7h1M14 11h1M14 15h1"/></svg></div>
-          <div><h4>Oficina y almacén</h4><p>997 S.E. 12th Street, Hialeah, FL 33010, Estados Unidos. Envíos a toda la República Dominicana.</p></div>
+          <div><h4>Oficina y almacén</h4><p>997 S.E. 12th Street, Hialeah, FL 33010, Estados Unidos. Entrega a su freight forwarder en Miami o CIF en Caucedo o Río Haina.</p></div>
         </div>
       </div>
       <div class="log-cta">
