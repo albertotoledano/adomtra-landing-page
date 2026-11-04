@@ -18,13 +18,13 @@ window.ICEBERG_CONFIG = {
      tiene que enviarlo. Edítalos libremente. */
   waMessages: {
     // Botones generales (hero, pie de página, botón flotante)
-    default: "Hola Iceberg, soy técnico/contratista de ADOMTRA en República Dominicana y me gustaría hablar con su equipo sobre equipos de refrigeración.",
+    default: "Hola Iceberg, soy técnico/contratista de ADOMTRA en República Dominicana y me gustaría hablar con su equipo sobre equipos de refrigeración. Código: ADOMTRA2026",
     // Botón "Cotizar por WhatsApp"
-    quote:   "Hola Iceberg, soy de ADOMTRA (República Dominicana) y quiero cotizar equipos de refrigeración. Esta es mi lista:",
+    quote:   "Hola Iceberg, soy de ADOMTRA (República Dominicana) y quiero cotizar equipos de refrigeración. Código: ADOMTRA2026. Esta es mi lista:",
     // Botón "Repuestos"
-    parts:   "Hola Iceberg, soy de ADOMTRA (República Dominicana) y necesito repuestos de refrigeración. Esto es lo que busco:",
+    parts:   "Hola Iceberg, soy de ADOMTRA (República Dominicana) y necesito repuestos de refrigeración. Código: ADOMTRA2026. Esto es lo que busco:",
     // Botón "Tengo un proyecto"
-    project: "Hola Iceberg, soy de ADOMTRA y tengo un proyecto de refrigeración o cuarto frío en República Dominicana. Se los cuento:",
+    project: "Hola Iceberg, soy de ADOMTRA y tengo un proyecto de refrigeración o cuarto frío en República Dominicana. Código: ADOMTRA2026. Se los cuento:",
     // Botón para agendar una llamada
     meet:    "Hola Iceberg, soy de ADOMTRA (República Dominicana) y me gustaría agendar una llamada o videollamada con su equipo."
   },
