@@ -18,7 +18,7 @@ events.iceberg-refrigeration.com): repositorio, sitio de Netlify y dominio propi
 
 1. **HubSpot Meetings:** pega un enlace de reuniones en `config.js` → `hubspot.meetingUrl`.
    Mientras esté vacío, "Agendar llamada" abre WhatsApp.
-2. **Dominio:** la página asume `https://adomtra.iceberg-refrigeration.com/` (canonical y
+2. **Dominio:** la página asume `https://iceberg-adomtra.netlify.app/` (canonical y
    vista previa al compartir). Si usas otro dominio, cámbialo en `index.html` y `privacidad.html`.
 3. **Netlify Forms:** activa las notificaciones del formulario `cotizacion-adomtra`
    (Forms → Form notifications) para que lleguen a info@ y alberto@.
