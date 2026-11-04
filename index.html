@@ -328,6 +328,8 @@
   /* En pantallas tactiles pequenas el calendario no se embebe (ver el JS de
      hsEmbed), asi que las reglas que ensanchaban la tarjeta para que cupiera
      el iframe ya no hacen falta: ahi solo se ve el titulo y el boton. */
+  /* Calendario de Cal.com: el embed ajusta su alto solo */
+  .cal-inline{width:100%;min-width:0;min-height:560px;background:#fff;border-radius:12px;overflow:hidden}
   .cal-fallback{padding:26px 22px}
   .cal-fallback .btn{width:100%;justify-content:center}
 
@@ -1191,6 +1193,8 @@
           <h3>Agende una llamada</h3>
           <p id="calSub">Elija un horario disponible con nuestro equipo.</p>
         </div>
+        <!-- Calendario de Cal.com (calcom.calLink en config.js) -->
+        <div class="cal-inline" id="calInline" style="display:none"></div>
         <!-- Calendario de HubSpot Meetings (hubspot.meetingUrl en config.js) -->
         <div class="meetings-iframe-container" id="hsEmbed" data-src=""></div>
         <div class="cal-fallback" id="calFallback">
@@ -1429,7 +1433,7 @@
 </a>
 
 <!-- Sube el ?v= de config.js cada vez que lo edites para que el navegador no use una copia vieja. -->
-<script src="/config.js?v=20261104d"></script>
+<script src="/config.js?v=20261104e"></script>
 <script>
 /* ==========================================================================
    Toda la configuración editable vive en config.js (window.ICEBERG_CONFIG).
@@ -1476,7 +1480,34 @@ document.addEventListener("click", function(e){
 const ES_TACTIL = window.matchMedia("(pointer:coarse)").matches;
 const ES_TACTIL_PEQUENA = ES_TACTIL &&
   window.matchMedia("(max-width:700px), (max-height:820px)").matches;
+/* ---------- Calendario de Cal.com (calcom.calLink en config.js) ----------
+   Tiene prioridad sobre HubSpot. Se embebe en la tarjeta "Agende una llamada";
+   el botón de abajo abre la misma página de Cal.com en otra pestaña. */
+const CAL_LINK = ((CFG.calcom||{}).calLink || "").replace(/^https?:\/\/(app\.)?cal\.com\//,"").replace(/^\/+|\/+$/g,"");
+const CAL_URL = CAL_LINK ? "https://cal.com/" + CAL_LINK : "";
+const CAL_OK = /^[\w.-]+\/[\w.-]+$/.test(CAL_LINK);
+if(CAL_OK){
+  const hs=document.getElementById("hsEmbed"); if(hs) hs.style.display="none";
+  const box=document.getElementById("calInline");
+  const cal=document.getElementById("calBtn");
+  const sub=document.getElementById("calSub");
+  if(sub) sub.textContent="Elija el día y la hora: una llamada de 15 minutos con Alberto, en español.";
+  if(cal){ cal.href=CAL_URL; cal.className="btn btn-ghost"; cal.textContent="Abrir el calendario en otra pestaña"; }
+  if(box){
+    box.style.display="";
+    (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+    Cal("init", "adomtra", {origin:"https://app.cal.com"});
+    Cal.ns.adomtra("inline", { elementOrSelector:"#calInline", calLink: CAL_LINK,
+      config: { layout:"month_view", theme:"light" } });
+    Cal.ns.adomtra("ui", { theme:"light", layout:"month_view", hideEventTypeDetails:false,
+      cssVarsPerTheme:{ light:{ "cal-brand":"#0091d5" } } });
+    // Una reserva confirmada cuenta como conversión "Contacto" de Google Ads.
+    Cal.ns.adomtra("on", { action:"bookingSuccessful", callback: function(){ trackContact(); } });
+  }
+}
+
 (function(){
+  if(CAL_OK) return;
   const embed=document.getElementById("hsEmbed");
   const fallback=document.getElementById("calFallback");
   const cal=document.getElementById("calBtn");

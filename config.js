@@ -31,6 +31,14 @@ window.ICEBERG_CONFIG = {
     meet:    "Hola Iceberg, soy de ADOMTRA (República Dominicana) y me gustaría agendar una llamada o videollamada con su equipo."
   },
 
+  /* ---- Calendario de Cal.com ----
+     calLink: usuario/evento de Cal.com (lo que va después de cal.com/).
+     Se muestra embebido en la sección "Agende una llamada".
+     Vacío = se usa HubSpot (abajo) o, si tampoco hay, WhatsApp. */
+  calcom: {
+    calLink: "alberto-toledano/15min"
+  },
+
   /* ---- HubSpot (Hub ID 243983862, región na2) ----
      meetingUrl: pega aquí un enlace de HubSpot Meetings para este público
      (ej. https://meetings-na2.hubspot.com/alberto-toledano/adomtra).
