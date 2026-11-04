@@ -25,6 +25,8 @@ window.ICEBERG_CONFIG = {
     parts:   "Hola Iceberg, soy de ADOMTRA (República Dominicana) y necesito repuestos de refrigeración. Código: ADOMTRA2027. Esto es lo que busco:",
     // Botón "Tengo un proyecto"
     project: "Hola Iceberg, soy de ADOMTRA y tengo un proyecto de refrigeración o cuarto frío en República Dominicana. Código: ADOMTRA2027. Se los cuento:",
+    // Botón "Cotizar KeepRite" (sección de marcas)
+    keeprite: "Hola Iceberg, soy de ADOMTRA (República Dominicana) y quiero cotizar equipos KeepRite Refrigeration. Código: ADOMTRA2027. Esto es lo que necesito:",
     // Botón para agendar una llamada
     meet:    "Hola Iceberg, soy de ADOMTRA (República Dominicana) y me gustaría agendar una llamada o videollamada con su equipo."
   },

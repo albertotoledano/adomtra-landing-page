@@ -747,6 +747,30 @@
   .promo-copy .promo-code{font-family:var(--font-display);font-weight:800;font-size:26px;letter-spacing:.08em}
   .promo-copy .ico{width:18px;height:18px;color:#a9c8de}
   .promo-box small{display:block;font-size:12.5px;color:#d5e6f2;margin-top:6px;line-height:1.4}
+  .kr-feature{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);background:#fff;border:1px solid var(--line);
+    border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-lg);margin:34px 0 54px}
+  .kr-photo img{width:100%;height:100%;object-fit:cover;min-height:320px}
+  .kr-body{padding:36px 38px;display:flex;flex-direction:column;align-items:flex-start;justify-content:center}
+  .kr-tag{display:inline-block;background:var(--navy);color:#fff;font-size:11.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+    padding:6px 12px;border-radius:999px;margin-bottom:18px}
+  .kr-logo{height:84px;width:auto;margin-bottom:16px}
+  .kr-body h3{font-family:var(--font-display);font-size:26px;line-height:1.2;color:var(--navy);margin-bottom:12px}
+  .kr-body p{color:var(--muted);font-size:16px;margin-bottom:22px}
+  .kr-actions{display:flex;flex-wrap:wrap;gap:10px}
+  .brands-sub{margin:0 0 20px}
+  .brands-sub .htpg-logo{margin:0 auto 10px}
+  .logo-strip{display:grid;grid-template-columns:repeat(6,1fr);gap:14px;margin-bottom:18px}
+  .ls-item{background:#fff;border:1px solid var(--line);border-radius:14px;height:84px;display:flex;align-items:center;justify-content:center;padding:14px}
+  .ls-item img{height:40px;width:auto;max-width:100%;object-fit:contain}
+  .ls-item img.ls-copeland{width:100%;max-width:170px;height:auto}
+  .ls-word{font-family:Arial,Helvetica,sans-serif;font-weight:900;font-size:24px;letter-spacing:.06em;color:#E2001A}
+  #marcas .brand-grid{margin-bottom:48px}
+  @media (max-width:860px){
+    .kr-feature{grid-template-columns:1fr}
+    .kr-photo img{min-height:0;max-height:300px}
+    .kr-body{padding:26px 22px}
+    .logo-strip{grid-template-columns:repeat(3,1fr)}
+  }
   @media (max-width:760px){
     .adomtra-facts{grid-template-columns:1fr}
   }
@@ -805,6 +829,7 @@
         </a>
       </div>
       <div class="hero-trust">
+        <div><span class="dot"></span><span><b>Exportadores exclusivos</b> de KeepRite Refrigeration</span></div>
         <div><span class="dot"></span><span><b>35+ países</b> atendidos en EE. UU., Latinoamérica y el Caribe</span></div>
         <div><span class="dot"></span><span><b>500+ proyectos</b> completados</span></div>
         <div><span class="dot"></span><span><b>Garantía</b> en cada equipo, también fuera de EE. UU.</span></div>
@@ -841,18 +866,51 @@
 
 <!-- ================= MARCAS ================= -->
 <section id="marcas" style="background:var(--ice-2);border-bottom:1px solid var(--line)">
-  <div class="wrap center">
-    <img class="htpg-logo" src="/assets/htpg-logo.png" alt="HTPG, Heat Transfer Products Group" width="170" height="60">
-    <span class="eyebrow">Marcas que distribuimos</span>
-    <h2>Las marcas que usted ya conoce, en un solo suplidor</h2>
-    <p class="lead center">Somos distribuidores de <b>HTPG</b>, fabricante de Russell, Witt, Kramer y ColdZone, y de otras marcas líderes de la industria. Un solo pedido, una sola cotización y un solo envío a República Dominicana.</p>
+  <div class="wrap">
+    <div class="center">
+      <span class="eyebrow">Marcas que distribuimos</span>
+      <h2>Las marcas que usted ya conoce, en un solo suplidor</h2>
+      <p class="lead center">Un solo pedido, una sola cotización y un solo envío a República Dominicana.</p>
+    </div>
+
+    <!-- KeepRite: exportadores exclusivos -->
+    <div class="kr-feature">
+      <div class="kr-photo"><img src="/assets/keeprite-units.jpg" alt="Unidades condensadoras KeepRite Refrigeration en el almacén de Iceberg" width="864" height="900" loading="lazy"></div>
+      <div class="kr-body">
+        <span class="kr-tag">Exportadores exclusivos</span>
+        <img class="kr-logo" src="/assets/brands/keeprite.png" alt="KeepRite Refrigeration" width="210" height="90">
+        <h3>Somos los exportadores exclusivos de KeepRite Refrigeration</h3>
+        <p>Unidades condensadoras, evaporadores, condensadores remotos y sistemas completos KeepRite, directo de Iceberg a su proyecto en República Dominicana, con garantía de fábrica y soporte técnico en español.</p>
+        <div class="kr-actions">
+          <a class="btn btn-wa" data-wa="keeprite" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><use href="#i-wa"/></svg><span>Cotizar KeepRite</span></a>
+          <a class="btn btn-ghost" href="#quote"><svg class="ico" aria-hidden="true"><use href="#i-file"/></svg>Solicitar cotización</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- HTPG -->
+    <div class="center brands-sub">
+      <img class="htpg-logo" src="/assets/htpg-logo.png" alt="HTPG, Heat Transfer Products Group" width="170" height="60">
+      <p class="lead center">Distribuidores de <b>HTPG</b>, fabricante de Russell, Witt, Kramer y ColdZone.</p>
+    </div>
     <div class="brand-grid">
       <div class="brand-card"><div class="logo-box"><img src="/assets/russell-logo.png" alt="Russell" width="174" height="60"></div><small>Línea completa de unidades de refrigeración</small></div>
       <div class="brand-card"><div class="logo-box"><img src="/assets/witt-logo.png" alt="Witt" width="132" height="60"></div><small>Equipos comerciales de transferencia de calor</small></div>
       <div class="brand-card"><div class="logo-box"><img src="/assets/kramer-logo.png" alt="Kramer" width="216" height="45"></div><small>Soluciones de refrigeración de bajo consumo</small></div>
       <div class="brand-card"><div class="logo-box"><img src="/assets/coldzone-logo.png?v=4" alt="ColdZone"></div><small>Refrigeración para servicio de alimentos</small></div>
     </div>
-    <p class="also-line"><b>También:</b> Copeland · Bitzer · Danfoss · Sporlan · KeepRite · Carlyle · A&amp;V Refrigeration · paneles · puertas · repuestos y más.</p>
+
+    <!-- Otras marcas -->
+    <div class="center brands-sub"><span class="eyebrow">También distribuimos</span></div>
+    <div class="logo-strip">
+      <div class="ls-item"><img class="ls-copeland" src="/assets/brands/copeland.png" alt="Copeland" width="657" height="60" loading="lazy"></div>
+      <div class="ls-item"><span class="ls-word" aria-label="Bitzer">BITZER</span></div>
+      <div class="ls-item"><img src="/assets/brands/danfoss.png" alt="Danfoss" width="102" height="40" loading="lazy"></div>
+      <div class="ls-item"><img src="/assets/brands/sporlan.png" alt="Sporlan" width="66" height="44" loading="lazy" style="height:44px"></div>
+      <div class="ls-item"><img src="/assets/brands/carlyle.png" alt="Carlyle" width="133" height="36" loading="lazy" style="height:36px"></div>
+      <div class="ls-item"><img src="/assets/brands/av.png" alt="A&amp;V Refrigeration" width="58" height="40" loading="lazy"></div>
+    </div>
+    <p class="also-line center">Además: paneles aislados · puertas para cuartos fríos · controles · refrigerantes · repuestos y más.</p>
   </div>
 </section>
 
@@ -1136,8 +1194,8 @@
       </div>
       <div class="ben">
         <div class="num"><svg class="ico" aria-hidden="true"><use href="#i-award"/></svg></div>
-        <h3>Distribuidor de HTPG</h3>
-        <p>Russell, Witt, Kramer y ColdZone, junto a Copeland, Bitzer, Danfoss, Sporlan y más.</p>
+        <h3>Exportador exclusivo de KeepRite</h3>
+        <p>Y distribuidor de HTPG (Russell, Witt, Kramer y ColdZone), Copeland, Bitzer, Danfoss, Sporlan y más.</p>
       </div>
       <div class="ben">
         <div class="num"><svg class="ico" aria-hidden="true"><use href="#i-shield"/></svg></div>
@@ -1344,7 +1402,7 @@
 </a>
 
 <!-- Sube el ?v= de config.js cada vez que lo edites para que el navegador no use una copia vieja. -->
-<script src="/config.js?v=20261104c"></script>
+<script src="/config.js?v=20261104d"></script>
 <script>
 /* ==========================================================================
    Toda la configuración editable vive en config.js (window.ICEBERG_CONFIG).
